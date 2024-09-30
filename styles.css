@@ -1,0 +1,139 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8f74aa;
+    text-align: center;
+}
+
+/* Title Styling */
+h1 {
+    margin: 20px 0;
+    color:black;
+}
+
+/* Rules Section Styling */
+.rules {
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: left; /* Keep rules left-aligned */
+}
+
+/* Center the heading within the rules box */
+.rules h2 {
+    text-align: center; /* Center the heading */
+    margin: 0 0 20px 0; /* Add some space below the heading */
+}
+
+
+/* Arrow Styling */
+.arrow-right, .arrow-left {
+    font-size: 50px;
+    text-decoration: none;
+    color: #350480;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-right:hover, .arrow-left:hover {
+    background-color: #0056b3;
+}
+
+.arrow-right:active, .arrow-left:active {
+    transform: scale(1.1);
+}
+
+/* Remove underline from arrows */
+.arrow-right, .arrow-left {
+    text-decoration: none;
+}
+
+/* Game Container Styling */
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #350480; /* Card default color */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+    transform: rotateY(0deg); /* Default rotation */
+    perspective: 1000px; /* Enable 3D effect */
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none; /* Initially hide the image */
+}
+
+.flipped {
+    transform: rotateY(180deg); /* Flip card */
+}
+
+.card.flipped img {
+    display: block; /* Show the image when flipped */
+    background-color: none; /* No background color when flipped */
+}
+
+/* Back and front sides of card handling */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #350480; /* Front side color */
+    backface-visibility: hidden;
+}
+
+.card.flipped::before {
+    background-color: none; /* No background color when flipped */
+}
+
+/* Ensure that the back side (image) shows properly */
+.card img {
+    backface-visibility: hidden;
+}
+
+/* Message Styling */
+#message {
+    margin: 20px 0;
+    font-size: 30px;
+    color: black;
+}
+
+/* Reset Button */
+#reset-button {
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: ;
+}
